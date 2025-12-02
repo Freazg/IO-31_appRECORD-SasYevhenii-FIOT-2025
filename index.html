@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звітний документ - Лабораторні роботи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #764ba2;
+            margin: 30px 0 15px;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
+        }
+        h3 {
+            color: #555;
+            margin: 20px 0 10px;
+        }
+        .student-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .student-info p {
+            margin: 8px 0;
+        }
+        .lab-nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .lab-nav a {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        .lab-nav a:hover {
+            opacity: 0.9;
+        }
+        .lab-section {
+            margin: 40px 0;
+            padding: 30px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+        }
+        .links-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .links-table th,
+        .links-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .links-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .links-table tr:hover {
+            background: #f5f5f5;
+        }
+        .links-table a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .links-table a:hover {
+            text-decoration: underline;
+        }
+        .code-section {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+        }
+        .screenshot {
+            max-width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ЗВІТНИЙ HTML-ДОКУМЕНТ</h1>
+            <p>Лабораторні роботи з дисципліни<br>"WEB-орієнтовані технології. Frontend розробка"</p>
+        </header>
+
+        <div class="student-info">
+            <h2>Інформація про студента</h2>
+            <p><strong>ПІБ:</strong> Сас Євгеній Петрович</p>
+            <p><strong>Група:</strong> ІО-31</p>
+            <p><strong>Email:</strong> qwerty2015f5@gmail.com</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Freazg" target="_blank">@Freazg</a></p>
+        </div>
+
+        <nav class="lab-nav">
+            <a href="#lab1">Лабораторна робота №1</a>
+            <a href="#lab2">Лабораторна робота №2</a>
+            <a href="#lab3">Лабораторна робота №3</a>
+            <a href="#lab4">Лабораторна робота №4</a>
+        </nav>
+
+        <section class="lab-section" id="lab1">
+            <h2>ЛАБОРАТОРНА РОБОТА №1</h2>
+            <h3>Тема: ТЕГИ ТА АТРИБУТИ HTML-ДОКУМЕНТА. СТРУКТУРНА РОЗМІТКА. GIT.GITHUB. РОБОТА З РЕПОЗИТОРІЯМИ. ОПИС ЛОГІКИ ВЛАСНОГО WEB-ЗАСТОСУНКУ.</h3>
+
+            <h3>Мета роботи:</h3>
+            <p>Придбати практичні навички роботи з GitHub, репозиторіями, HTML-документом, таблицями, зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.</p>
+
+            <h3>Опис предметного середовища:</h3>
+            <p><strong>Трекер звичок (Habit Tracker)</strong> - це веб-застосунок для формування та відстеження корисних звичок користувачів. Застосунок допомагає людям систематично виконувати необхідні дії, відстежувати прогрес і підтримувати мотивацію через візуалізацію досягнень.</p>
+
+            <h3>Основний функціонал:</h3>
+            <ul>
+                <li>Управління звичками (створення, редагування, видалення)</li>
+                <li>Відстеження щоденного виконання</li>
+                <li>Візуалізація прогресу (календар, графіки, статистика)</li>
+                <li>Система мотивації та досягнень</li>
+                <li>Адаптивний дизайн для всіх пристроїв</li>
+            </ul>
+
+            <h3>Посилання на репозиторії:</h3>
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Репозиторій</th>
+                        <th>Жива сторінка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WEB-застосунок</td>
+                        <td><a href="https://github.com/Freazg/IO-31_appWEB-SasYevhenii-FIOT-2025" target="_blank">GitHub Repository</a></td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/" target="_blank">Live Page</a></td>
+                    </tr>
+                    <tr>
+                        <td>Самостійні роботи</td>
+                        <td><a href="https://github.com/Freazg/IO-31_INDEPENDENT-SasYevhenii-FIOT-2025" target="_blank">GitHub Repository</a></td>
+                        <td><a href="https://freazg.github.io/IO-31_INDEPENDENT-SasYevhenii-FIOT-2025/" target="_blank">Live Page</a></td>
+                    </tr>
+                    <tr>
+                        <td>Звітний документ</td>
+                        <td><a href="https://github.com/Freazg/IO-31_appRECORD-SasYevhenii-FIOT-2025" target="_blank">GitHub Repository</a></td>
+                        <td><a href="https://freazg.github.io/IO-31_appRECORD-SasYevhenii-FIOT-2025/" target="_blank">Live Page</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Структура головної сторінки WEB-застосунку:</h3>
+            <p>Головна сторінка містить наступні HTML-елементи:</p>
+
+            <h4>1. Таблиця - Порівняння функціоналу</h4>
+            <div class="code-section">
+                <pre>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Функція&lt;/th&gt;
+            &lt;th&gt;Безкоштовна версія&lt;/th&gt;
+            &lt;th&gt;Преміум версія&lt;/th&gt;
+            &lt;th&gt;Опис&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Кількість звичок&lt;/td&gt;
+            &lt;td&gt;До 5&lt;/td&gt;
+            &lt;td&gt;Необмежено&lt;/td&gt;
+            &lt;td&gt;Відстежуйте всі необхідні звички&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </div>
+            <p><strong>Опис тегів таблиці:</strong></p>
+            <ul>
+                <li><code>&lt;table&gt;</code> - основний контейнер таблиці</li>
+                <li><code>&lt;thead&gt;</code> - заголовок таблиці</li>
+                <li><code>&lt;tbody&gt;</code> - тіло таблиці з даними</li>
+                <li><code>&lt;tr&gt;</code> - рядок таблиці</li>
+                <li><code>&lt;th&gt;</code> - комірка заголовка (жирний текст)</li>
+                <li><code>&lt;td&gt;</code> - звичайна комірка даних</li>
+            </ul>
+
+            <h4>2. Зображення</h4>
+            <div class="code-section">
+                <pre>&lt;img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600" 
+     alt="Трекер звичок" 
+     class="hero-image"&gt;</pre>
+            </div>
+            <p><strong>Атрибути тегу img:</strong></p>
+            <ul>
+                <li><code>src</code> - шлях до зображення (URL або локальний файл)</li>
+                <li><code>alt</code> - альтернативний текст (для доступності та SEO)</li>
+                <li><code>width</code> - ширина зображення</li>
+                <li><code>height</code> - висота зображення</li>
+                <li><code>class</code> - CSS клас для стилізації</li>
+            </ul>
+
+            <h4>3. Списки</h4>
+            <div class="code-section">
+                <pre>&lt;ol&gt;
+    &lt;li&gt;&lt;strong&gt;Пити 2 літри води щодня&lt;/strong&gt;
+        &lt;ul class="nested-list"&gt;
+            &lt;li&gt;Покращує метаболізм&lt;/li&gt;
+            &lt;li&gt;Підтримує здоров'я шкіри&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Ранкова зарядка&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </div>
+            <p><strong>Типи списків:</strong></p>
+            <ul>
+                <li><code>&lt;ul&gt;</code> - ненумерований (маркірований) список</li>
+                <li><code>&lt;ol&gt;</code> - нумерований список</li>
+                <li><code>&lt;li&gt;</code> - елемент списку</li>
+            </ul>
+            <p><strong>Атрибути:</strong></p>
+            <ul>
+                <li><code>type</code> - тип маркера або нумерації (для ol: 1, A, a, I, i)</li>
+                <li><code>start</code> - початкове значення нумерації</li>
+            </ul>
+
+            <h4>4. Форма створення звички</h4>
+            <div class="code-section">
+                <pre>&lt;form&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="habitName"&gt;Назва звички*&lt;/label&gt;
+        &lt;input type="text" id="habitName" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="habitCategory"&gt;Категорія*&lt;/label&gt;
+        &lt;select id="habitCategory" required&gt;
+            &lt;option value=""&gt;Обери категорію&lt;/option&gt;
+            &lt;option value="health"&gt;Здоров'я та фітнес&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Частота виконання*&lt;/label&gt;
+        &lt;input type="radio" name="frequency" value="daily" checked&gt; Щодня
+        &lt;input type="radio" name="frequency" value="weekly"&gt; Тижнево
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Створити звичку&lt;/button&gt;
+&lt;/form&gt;</pre>
+            </div>
+            <p><strong>Теги форми:</strong></p>
+            <ul>
+                <li><code>&lt;form&gt;</code> - контейнер форми</li>
+                <li><code>&lt;input&gt;</code> - поле введення різних типів</li>
+                <li><code>&lt;label&gt;</code> - підпис для поля</li>
+                <li><code>&lt;select&gt;</code> - випадаючий список</li>
+                <li><code>&lt;option&gt;</code> - опція у випадаючому списку</li>
+                <li><code>&lt;textarea&gt;</code> - багаторядкове текстове поле</li>
+                <li><code>&lt;button&gt;</code> - кнопка</li>
+            </ul>
+
+            <h3>Висновки:</h3>
+            <p>В ході виконання лабораторної роботи №1 було:</p>
+            <ul>
+                <li>Створено 3 репозиторії на GitHub</li>
+                <li>Налаштовано GitHub Pages для всіх репозиторіїв</li>
+                <li>Розроблено HTML-структуру веб-застосунку "Трекер звичок"</li>
+                <li>Реалізовано всі необхідні HTML-елементи: таблиці, списки, форми, зображення, посилання</li>
+                <li>Описано предметну галузь та бізнес-логіку застосунку</li>
+                <li>Створено звітний HTML-документ для всіх лабораторних робіт</li>
+            </ul>
+        </section>
+
+        <section class="lab-section" id="lab2">
+            <h2>ЛАБОРАТОРНА РОБОТА №2</h2>
+            <p><em>Буде додано після виконання</em></p>
+        </section>
+    </div>
+</body>
+</html>
