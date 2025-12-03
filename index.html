@@ -515,8 +515,241 @@ button:hover {
         </section>
 
         <section class="lab-section" id="lab3">
-            <h2>ЛАБОРАТОРНА РОБОТА №3</h2>
-            <p><em>Буде додано після виконання</em></p>
+        <h2>ЛАБОРАТОРНА РОБОТА №3</h2>
+            <h3>Тема: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX. АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT</h3>
+
+            <h3>Мета роботи:</h3>
+            <ul>
+                <li>Придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів</li>
+                <li>Придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX</li>
+                <li>З'ясувати переваги та недоліки типів макетів веб-сторінок</li>
+            </ul>
+
+            <h3>Посилання на ресурси:</h3>
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Посилання</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WEB-застосунок (адаптивний)</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/" target="_blank">Live Page</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 2 - Таблична верстка</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/tasks/task2-table.html" target="_blank">Таблична верстка</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 2 - Блокова верстка</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/tasks/task2-blocks.html" target="_blank">Блокова верстка</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 3 - Flexbox</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/tasks/task3-flexbox.html" target="_blank">Flexbox макет</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>АДАПТИВНА ВЕРСТКА - Медіа-запити</h3>
+            
+            <h4>Breakpoints (точки перелому):</h4>
+            <ul>
+                <li><strong>Desktop:</strong> 1200px і більше - повна версія сайту</li>
+                <li><strong>Tablet:</strong> 768px - 1199px - адаптація для планшетів</li>
+                <li><strong>Mobile Large:</strong> 576px - 767px - великі смартфони</li>
+                <li><strong>Mobile:</strong> до 575px - маленькі смартфони</li>
+            </ul>
+
+            <h4>Приклади медіа-запитів з CSS:</h4>
+            <div class="code-section">
+                <pre><code>/* Desktop - великі екрани */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Tablet - планшети */
+@media screen and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+        padding: 15px;
+    }
+    
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Mobile - смартфони */
+@media screen and (max-width: 575px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .hero, .features {
+        padding: 15px;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* Логічні оператори */
+@media screen and (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+    .hero {
+        display: flex;
+        align-items: center;
+    }
+}</code></pre>
+            </div>
+
+            <h3>ЗАВДАННЯ №2 - Типи верстки</h3>
+            
+            <h4>Варіант 10 - Таблична верстка</h4>
+            <p><strong>Макет:</strong> Вертикальний макет з боковою панеллю</p>
+            
+            <h4>Фіксована таблична верстка:</h4>
+            <div class="code-section">
+                <pre><code>&lt;table class="fixed-table-layout"&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2" class="header"&gt;1 - Шапка&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="sidebar"&gt;2 - Sidebar&lt;/td&gt;
+        &lt;td class="content"&gt;4 - Content&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2" class="footer"&gt;3 - Footer&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="code-section">
+                <pre><code>.fixed-table-layout {
+    width: 600px;
+    border-collapse: collapse;
+}
+
+.fixed-table-layout .header {
+    background: #4169e1;
+    height: 80px;
+}
+
+.fixed-table-layout .sidebar {
+    background: #ffa500;
+    width: 150px;
+}</code></pre>
+            </div>
+
+            <p><strong>Особливості фіксованої верстки:</strong> Фіксована ширина 600px, не адаптується під екран.</p>
+            <p><strong>Особливості гумової верстки:</strong> Ширина 100% з max-width, адаптується під різні екрани.</p>
+
+            <h4>Варіант 1 - Блокова верстка (плаваючі елементи)</h4>
+            <p><strong>Макет:</strong> Класичний трьохколонковий макет</p>
+
+            <div class="code-section">
+                <pre><code>&lt;div class="fixed-layout"&gt;
+    &lt;div class="header"&gt;1 - Шапка&lt;/div&gt;
+    &lt;div class="sidebar-left"&gt;5 - Ліва панель&lt;/div&gt;
+    &lt;div class="sidebar-right"&gt;2 - Права панель&lt;/div&gt;
+    &lt;div class="content"&gt;4 - Контент&lt;/div&gt;
+    &lt;div class="footer"&gt;3 - Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="code-section">
+                <pre><code>.fixed-layout .sidebar-left {
+    float: left;
+    width: 150px;
+}
+
+.fixed-layout .sidebar-right {
+    float: right;
+    width: 150px;
+}
+
+.fixed-layout .content {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.fixed-layout .footer {
+    clear: both;
+}</code></pre>
+            </div>
+
+            <h3>ЗАВДАННЯ №3 - FLEXBOX</h3>
+            
+            <h4>Варіант 10 - Навчальний центр IT</h4>
+            <p>Створено повноцінний адаптивний сайт навчального центру з використанням Flexbox.</p>
+
+            <h4>Основні Flexbox властивості:</h4>
+            <div class="code-section">
+                <pre><code>/* Flex Container */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Flex Items */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+/* Responsive Flexbox */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card {
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .service-card {
+        width: 100%;
+    }
+}</code></pre>
+            </div>
+
+            <h4>Переваги Flexbox:</h4>
+            <ul>
+                <li>Легке вирівнювання елементів по горизонталі та вертикалі</li>
+                <li>Адаптивність без складних обчислень</li>
+                <li>Зручне управління пробілами між елементами (gap)</li>
+                <li>Можливість змінювати порядок елементів</li>
+                <li>Автоматичний розподіл простору</li>
+            </ul>
+
+            <h3>Висновки:</h3>
+            <p>В ході виконання лабораторної роботи №3 було:</p>
+            <ul>
+                <li>Додано адаптивну верстку до основного сайту з медіа-запитами для desktop, tablet та mobile</li>
+                <li>Реалізовано фіксовану та гумову таблічну верстку (Варіант 10)</li>
+                <li>Реалізовано фіксовану та гумову блокову верстку з плаваючими елементами (Варіант 1)</li>
+                <li>Створено повноцінний Flexbox макет навчального центру (Варіант 10)</li>
+                <li>Застосовано логічні оператори в медіа-запитах</li>
+                <li>Вивчено переваги та недоліки різних типів верстки</li>
+                <li>Освоєно сучасні підходи до створення адаптивних інтерфейсів</li>
+            </ul>
+
         </section>
     </div>
 </body>
