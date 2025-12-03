@@ -751,6 +751,333 @@ button:hover {
             </ul>
 
         </section>
+    <section class="lab-section" id="lab4">
+            <h2>ЛАБОРАТОРНА РОБОТА №4</h2>
+            <h3>Тема: ОСНОВИ JAVASCRIPT У HTML-ДОКУМЕНТІ. ШАБЛОНІ РЯДКИ. КЕРУВАННЯ ПОРЯДКОМ ОБЧИСЛЕНЬ. МАСИВИ. МЕТОДИ МАСИВІВ. ФУНКЦІЇ</h3>
+
+            <h3>Мета роботи:</h3>
+            <p>Придбати практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях. 
+            Реалізація програм засобами мови JAVASCRIPT.</p>
+
+            <h3>Посилання на ресурси:</h3>
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Посилання</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Лабораторна робота №4 (всі завдання)</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/" target="_blank">Lab 4 Index</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 1</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task1.html" target="_blank">Task 1</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 2</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task2.html" target="_blank">Task 2</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 3</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task3.html" target="_blank">Task 3</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 4</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task4.html" target="_blank">Task 4</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 5</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task5.html" target="_blank">Task 5</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 6</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task6.html" target="_blank">Task 6</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 7</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task7.html" target="_blank">Task 7</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 8</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task8.html" target="_blank">Task 8</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 9</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab4/task9.html" target="_blank">Task 9</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>ЗАВДАННЯ №1 - Перевірка чверті години</h3>
+            <p><strong>Умова:</strong> Збережіть введене значення часу (год:хвил) у змінну hour. 
+            Вивести у Console використовуючи шаблонний рядок. Перевірити до якої чверті години відноситься введене значення.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function checkTime() {
+    let hour = prompt("Введіть час у форматі год:хвил:");
+    if (hour === null || hour === "") {
+        alert("Ви не ввели час!");
+        return;
+    }
+    console.log(`Введений час: ${hour}`);
+    let parts = hour.split(":");
+    let minutes = parseInt(parts[1]);
+    
+    let quarter;
+    if (minutes >= 0 && minutes < 15) {
+        quarter = "Перша чверть години";
+    } else if (minutes >= 15 && minutes < 30) {
+        quarter = "Друга чверть години";
+    } else if (minutes >= 30 && minutes < 45) {
+        quarter = "Третя чверть години";
+    } else {
+        quarter = "Четверта чверть години";
+    }
+    alert(quarter);
+}</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/vTd4xfPS/image.png" alt="Завдання 1" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №2 - Дні тижня (switch-case)</h3>
+            <p><strong>Умова:</strong> Змінна day набуває значення від '1' до '7'. 
+            Визначити день тижня через switch-case.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function checkDay() {
+    let day = prompt("Введіть номер дня тижня (1-7):");
+    console.log(`Введене значення: ${day}`);
+    
+    let finish;
+    switch(day) {
+        case '1': finish = "Понеділок"; break;
+        case '2': finish = "Вівторок"; break;
+        case '3': finish = "Середа"; break;
+        case '4': finish = "Четвер"; break;
+        case '5': finish = "П'ятниця"; break;
+        case '6': finish = "Субота"; break;
+        case '7': finish = "Неділя"; break;
+        default: finish = "Невірний номер дня!"; break;
+    }
+    console.log(`Результат: ${finish}`);
+    alert(finish);
+}</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/cL56MV91/image.png" alt="Завдання 2" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №3 - Авторизація користувачів</h3>
+            <p><strong>Умова:</strong> Є User1, User2, User3 з паролями. Перевірка логіну та пароля.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>const users = {
+    "User1": "pass1",
+    "User2": "pass2",
+    "User3": "pass3"
+};
+
+function login() {
+    let login = prompt("Введіть логін:");
+    if (login === null || login === "") {
+        alert("Cancelled");
+        return;
+    }
+    console.log(`Введений логін: ${login}`);
+    
+    if (users.hasOwnProperty(login)) {
+        let password = prompt(`Введіть пароль для ${login}:`);
+        if (users[login] === password) {
+            alert(`Hello, ${login}!`);
+            console.log(`Успішна авторизація`);
+        } else {
+            alert("Невірний пароль!");
+        }
+    } else {
+        alert("I don't know you");
+    }
+}</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/xT6dnw22/image.png" alt="Завдання 3" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №4 - Функція доставки</h3>
+            <p><strong>Умова:</strong> Функція getShippingMessage повертає повідомлення про вартість доставки.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function getShippingMessage(country, price, deliveryFee) {
+    let totalPrice = price + deliveryFee;
+    return `Shipping to ${country} will cost ${totalPrice} credits`;
+}
+
+console.log(getShippingMessage("Australia", 120, 50));
+console.log(getShippingMessage("Germany", 80, 20));
+console.log(getShippingMessage("Sweden", 100, 20));</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/HnppC2Z6/image.png" alt="Завдання 4" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №5 - Станція з продажу дроїдів</h3>
+            <p><strong>Умова:</strong> Функція makeTransaction перевіряє чи достатньо коштів для покупки дроїдів.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function makeTransaction(quantity, pricePerDroid, customerCredits) {
+    let totalPrice = quantity * pricePerDroid;
+    
+    if (totalPrice > customerCredits) {
+        return "Insufficient funds!";
+    } else {
+        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+    }
+}
+
+console.log(makeTransaction(5, 3000, 23000));
+console.log(makeTransaction(10, 5000, 8000));</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/Kv8Zq0gQ/image.png" alt="Завдання 5" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №6 - Об'єднання масивів (makeArray)</h3>
+            <p><strong>Умова:</strong> Функція makeArray об'єднує два масиви з обмеженням maxLength.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function makeArray(firstArray, secondArray, maxLength) {
+    let newArray = firstArray.concat(secondArray);
+    
+    if (newArray.length > maxLength) {
+        return newArray.slice(0, maxLength);
+    } else {
+        return newArray;
+    }
+}
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Mars"], 8));</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/DyNKCnhm/image.png" alt="Завдання 6" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №7 - Робота з масивом (Варіант 10)</h3>
+            <p><strong>Умова:</strong> Згенерувати масив, знайти мінімальний елемент, перемістити на початок, відсортувати методом вибору.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function findMinIndex(array) {
+    let minIndex = 0;
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < array[minIndex]) minIndex = i;
+    }
+    return minIndex;
+}
+
+function moveMinToStart(array) {
+    let minIndex = findMinIndex(array);
+    let minValue = array[minIndex];
+    for (let i = minIndex; i > 0; i--) {
+        array[i] = array[i - 1];
+    }
+    array[0] = minValue;
+    return array;
+}
+
+function selectionSortDesc(array) {
+    for (let i = 0; i < array.length - 1; i++) {
+        let maxIndex = i;
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[j] > array[maxIndex]) maxIndex = j;
+        }
+        if (maxIndex !== i) {
+            [array[i], array[maxIndex]] = [array[maxIndex], array[i]];
+        }
+    }
+    return array;
+}</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/SsS5Sv48/image.png" alt="Завдання 7" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №8 - Двовимірний масив</h3>
+            <p><strong>Умова:</strong> Робота з двовимірним масивом: збереження першого/останнього елементів, вставка 25 після другого елемента.</p>
+            
+            <h4>JavaScript код:</h4>
+            <div class="code-section">
+                <pre><code>function generate2DArray(rows, cols) {
+    let array = [];
+    for (let i = 0; i < rows; i++) {
+        let row = [];
+        for (let j = 0; j < cols; j++) {
+            row.push(Math.floor(Math.random() * 61) - 30);
+        }
+        array.push(row);
+    }
+    return array;
+}
+
+let array2D = generate2DArray(3, 4);
+let array = array2D.flat();
+let firstElement = array[0];
+let lastElement = array[array.length - 1];
+array.splice(2, 0, 25);
+console.log(`Перший: ${firstElement}, Останній: ${lastElement}`);</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/6Qwbcm8w/image.png" alt="Завдання 8" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №9 - Спливаюча підказка (Варіант 10)</h3>
+            <p><strong>Умова:</strong> Створити візуальний елемент "Спливаюча підказка" при наведенні миші.</p>
+            
+            <h4>HTML та CSS код:</h4>
+            <div class="code-section">
+                <pre><code>.tooltip-trigger {
+    position: relative;
+    cursor: help;
+    border-bottom: 2px dotted #667eea;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.tooltip-trigger:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}</code></pre>
+            </div>
+            <h4>Результат:</h4>
+            <img src="https://i.postimg.cc/ydGTMQ8x/image.png" alt="Завдання 9" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>Висновки:</h3>
+            <p>В ході виконання лабораторної роботи №4 було:</p>
+            <ul>
+                <li>Освоєно основи JavaScript: змінні, типи даних, шаблонні рядки</li>
+                <li>Вивчено умовні конструкції: if-else, switch-case</li>
+                <li>Реалізовано функції з параметрами та поверненням значень</li>
+                <li>Опрацьовано методи роботи з масивами: concat, slice, splice, flat</li>
+                <li>Застосовано цикли для обробки масивів</li>
+                <li>Реалізовано алгоритми сортування (метод вибору)</li>
+                <li>Створено інтерактивні елементи інтерфейсу (спливаючі підказки)</li>
+                <li>Використано prompt() та alert() для взаємодії з користувачем</li>
+                <li>Виведено результати у Console браузера для відлагодження</li>
+            </ul>
+        </section>
     </div>
 </body>
 </html>
