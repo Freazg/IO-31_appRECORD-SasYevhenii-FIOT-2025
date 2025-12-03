@@ -46,6 +46,10 @@
             color: #555;
             margin: 20px 0 10px;
         }
+        h4 {
+            color: #667eea;
+            margin: 15px 0 10px;
+        }
         .student-info {
             background: #f8f9fa;
             padding: 20px;
@@ -112,12 +116,11 @@
         }
         pre {
             margin: 0;
+            white-space: pre-wrap;
         }
-        .screenshot {
-            max-width: 100%;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            margin: 15px 0;
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
         }
         ul, ol {
             margin-left: 30px;
@@ -125,6 +128,15 @@
         }
         li {
             margin: 8px 0;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .selector-example {
+            background: #fff9e6;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 15px 0;
         }
     </style>
 </head>
@@ -197,129 +209,313 @@
                 </tbody>
             </table>
 
-            <h3>Структура головної сторінки WEB-застосунку:</h3>
-            <p>Головна сторінка містить наступні HTML-елементи:</p>
-
-            <h4>1. Таблиця - Порівняння функціоналу</h4>
-            <div class="code-section">
-                <pre>&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Функція&lt;/th&gt;
-            &lt;th&gt;Безкоштовна версія&lt;/th&gt;
-            &lt;th&gt;Преміум версія&lt;/th&gt;
-            &lt;th&gt;Опис&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Кількість звичок&lt;/td&gt;
-            &lt;td&gt;До 5&lt;/td&gt;
-            &lt;td&gt;Необмежено&lt;/td&gt;
-            &lt;td&gt;Відстежуйте всі необхідні звички&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</pre>
-            </div>
-            <p><strong>Опис тегів таблиці:</strong></p>
-            <ul>
-                <li><code>&lt;table&gt;</code> - основний контейнер таблиці</li>
-                <li><code>&lt;thead&gt;</code> - заголовок таблиці</li>
-                <li><code>&lt;tbody&gt;</code> - тіло таблиці з даними</li>
-                <li><code>&lt;tr&gt;</code> - рядок таблиці</li>
-                <li><code>&lt;th&gt;</code> - комірка заголовка (жирний текст)</li>
-                <li><code>&lt;td&gt;</code> - звичайна комірка даних</li>
-            </ul>
-
-            <h4>2. Зображення</h4>
-            <div class="code-section">
-                <pre>&lt;img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600" 
-     alt="Трекер звичок" 
-     class="hero-image"&gt;</pre>
-            </div>
-            <p><strong>Атрибути тегу img:</strong></p>
-            <ul>
-                <li><code>src</code> - шлях до зображення (URL або локальний файл)</li>
-                <li><code>alt</code> - альтернативний текст (для доступності та SEO)</li>
-                <li><code>width</code> - ширина зображення</li>
-                <li><code>height</code> - висота зображення</li>
-                <li><code>class</code> - CSS клас для стилізації</li>
-            </ul>
-
-            <h4>3. Списки</h4>
-            <div class="code-section">
-                <pre>&lt;ol&gt;
-    &lt;li&gt;&lt;strong&gt;Пити 2 літри води щодня&lt;/strong&gt;
-        &lt;ul class="nested-list"&gt;
-            &lt;li&gt;Покращує метаболізм&lt;/li&gt;
-            &lt;li&gt;Підтримує здоров'я шкіри&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Ранкова зарядка&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;</pre>
-            </div>
-            <p><strong>Типи списків:</strong></p>
-            <ul>
-                <li><code>&lt;ul&gt;</code> - ненумерований (маркірований) список</li>
-                <li><code>&lt;ol&gt;</code> - нумерований список</li>
-                <li><code>&lt;li&gt;</code> - елемент списку</li>
-            </ul>
-            <p><strong>Атрибути:</strong></p>
-            <ul>
-                <li><code>type</code> - тип маркера або нумерації (для ol: 1, A, a, I, i)</li>
-                <li><code>start</code> - початкове значення нумерації</li>
-            </ul>
-
-            <h4>4. Форма створення звички</h4>
-            <div class="code-section">
-                <pre>&lt;form&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="habitName"&gt;Назва звички*&lt;/label&gt;
-        &lt;input type="text" id="habitName" required&gt;
-    &lt;/div&gt;
-    
-    &lt;div class="form-group"&gt;
-        &lt;label for="habitCategory"&gt;Категорія*&lt;/label&gt;
-        &lt;select id="habitCategory" required&gt;
-            &lt;option value=""&gt;Обери категорію&lt;/option&gt;
-            &lt;option value="health"&gt;Здоров'я та фітнес&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-    
-    &lt;div class="form-group"&gt;
-        &lt;label&gt;Частота виконання*&lt;/label&gt;
-        &lt;input type="radio" name="frequency" value="daily" checked&gt; Щодня
-        &lt;input type="radio" name="frequency" value="weekly"&gt; Тижнево
-    &lt;/div&gt;
-    
-    &lt;button type="submit"&gt;Створити звичку&lt;/button&gt;
-&lt;/form&gt;</pre>
-            </div>
-            <p><strong>Теги форми:</strong></p>
-            <ul>
-                <li><code>&lt;form&gt;</code> - контейнер форми</li>
-                <li><code>&lt;input&gt;</code> - поле введення різних типів</li>
-                <li><code>&lt;label&gt;</code> - підпис для поля</li>
-                <li><code>&lt;select&gt;</code> - випадаючий список</li>
-                <li><code>&lt;option&gt;</code> - опція у випадаючому списку</li>
-                <li><code>&lt;textarea&gt;</code> - багаторядкове текстове поле</li>
-                <li><code>&lt;button&gt;</code> - кнопка</li>
-            </ul>
-
             <h3>Висновки:</h3>
-            <p>В ході виконання лабораторної роботи №1 було:</p>
-            <ul>
-                <li>Створено 3 репозиторії на GitHub</li>
-                <li>Налаштовано GitHub Pages для всіх репозиторіїв</li>
-                <li>Розроблено HTML-структуру веб-застосунку "Трекер звичок"</li>
-                <li>Реалізовано всі необхідні HTML-елементи: таблиці, списки, форми, зображення, посилання</li>
-                <li>Описано предметну галузь та бізнес-логіку застосунку</li>
-                <li>Створено звітний HTML-документ для всіх лабораторних робіт</li>
-            </ul>
+            <p>В ході виконання лабораторної роботи №1 було створено 3 репозиторії на GitHub, налаштовано GitHub Pages, розроблено HTML-структуру веб-застосунку "Трекер звичок" з усіма необхідними елементами: таблицями, списками, формами, зображеннями та посиланнями.</p>
         </section>
 
         <section class="lab-section" id="lab2">
             <h2>ЛАБОРАТОРНА РОБОТА №2</h2>
+            <h3>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ ТЕГУ, КЛАСУ, ІДЕНТИФІКАТОРА. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</h3>
+
+            <h3>Мета роботи:</h3>
+            <p>Придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішніми відступами, плаваючими елементами, оформленням текстових елементів.</p>
+
+            <h3>Посилання на ресурси:</h3>
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Посилання</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WEB-застосунок з CSS</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/" target="_blank">Live Page</a></td>
+                    </tr>
+                    <tr>
+                        <td>Резюме</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/resume.html" target="_blank">Resume Page</a></td>
+                    </tr>
+                    <tr>
+                        <td>CSS файл</td>
+                        <td><a href="https://github.com/Freazg/IO-31_appWEB-SasYevhenii-FIOT-2025/blob/main/css/style.css" target="_blank">style.css</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Способи підключення стилів:</h3>
+            <h4>1. Зовнішній CSS файл (використовується в проєкті):</h4>
+            <div class="code-section">
+                <pre><code>&lt;head&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+            </div>
+
+            <h4>2. Внутрішні стилі (використано в резюме):</h4>
+            <div class="code-section">
+                <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background: #f4f4f4;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+            </div>
+
+            <h4>3. Вбудовані стилі:</h4>
+            <div class="code-section">
+                <pre><code>&lt;div style="color: red; padding: 10px;"&gt;Текст&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>СЕЛЕКТОРИ</h3>
+
+            <h4>1. Селектор тегу:</h4>
+            <div class="selector-example">
+                <p><strong>HTML:</strong></p>
+                <div class="code-section">
+                    <pre><code>&lt;h1&gt;Трекер Звичок&lt;/h1&gt;
+&lt;p&gt;Текст параграфу&lt;/p&gt;</code></pre>
+                </div>
+                <p><strong>CSS:</strong></p>
+                <div class="code-section">
+                    <pre><code>h1 {
+    color: #667eea;
+    font-size: 2.5em;
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
+}</code></pre>
+                </div>
+                <p><strong>Опис:</strong> Селектор тегу застосовує стилі до всіх елементів вказаного типу на сторінці.</p>
+            </div>
+
+            <h4>2. Селектор класу:</h4>
+            <div class="selector-example">
+                <p><strong>HTML:</strong></p>
+                <div class="code-section">
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;section class="hero"&gt;Контент&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <p><strong>CSS:</strong></p>
+                <div class="code-section">
+                    <pre><code>.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+}</code></pre>
+                </div>
+                <p><strong>Опис:</strong> Селектор класу (починається з крапки) дозволяє застосувати стилі до елементів з певним класом. Один клас може використовуватись багато разів на сторінці.</p>
+            </div>
+
+            <h4>3. Селектор ідентифікатора:</h4>
+            <div class="selector-example">
+                <p><strong>HTML:</strong></p>
+                <div class="code-section">
+                    <pre><code>&lt;img id="profile-photo" src="photo.jpg" alt="Фото"&gt;</code></pre>
+                </div>
+                <p><strong>CSS:</strong></p>
+                <div class="code-section">
+                    <pre><code>#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+}</code></pre>
+                </div>
+                <p><strong>Опис:</strong> Селектор ID (починається з #) використовується для унікальних елементів. ID має бути унікальним на всій сторінці.</p>
+            </div>
+
+            <h4>4. Інші селектори:</h4>
+            
+            <p><strong>Універсальний селектор:</strong></p>
+            <div class="code-section">
+                <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+            </div>
+
+            <p><strong>Дочірній селектор:</strong></p>
+            <div class="code-section">
+                <pre><code>header .container {
+    display: flex;
+    justify-content: space-between;
+}</code></pre>
+            </div>
+
+            <p><strong>Селектор атрибута:</strong></p>
+            <div class="code-section">
+                <pre><code>input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+}
+
+a[href] {
+    color: white;
+    text-decoration: none;
+}</code></pre>
+            </div>
+
+            <p><strong>Псевдокласи:</strong></p>
+            <div class="code-section">
+                <pre><code>nav a:hover {
+    background: #667eea;
+    color: white;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+input:focus {
+    border-color: #667eea;
+}</code></pre>
+            </div>
+
+            <h3>CSS ВЛАСТИВОСТІ</h3>
+
+            <h4>Шрифти:</h4>
+            <div class="code-section">
+                <pre><code>body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+}</code></pre>
+            </div>
+
+            <h4>Колір тексту та фон:</h4>
+            <div class="code-section">
+                <pre><code>body {
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero {
+    background: white;
+    color: #333;
+}</code></pre>
+            </div>
+
+            <h4>Контури (borders):</h4>
+            <div class="code-section">
+                <pre><code>input {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.section-title {
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+}</code></pre>
+            </div>
+
+            <h4>Відступи (padding та margin):</h4>
+            <div class="code-section">
+                <pre><code>.container {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 40px;
+    margin-bottom: 30px;
+}</code></pre>
+            </div>
+
+            <h4>Таблиці:</h4>
+            <div class="code-section">
+                <pre><code>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}</code></pre>
+            </div>
+
+            <h4>Списки:</h4>
+            <div class="code-section">
+                <pre><code>ul, ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}</code></pre>
+            </div>
+
+            <h4>CSS Просунутий (flexbox, transitions, shadows):</h4>
+            <div class="code-section">
+                <pre><code>/* Flexbox */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Transitions */
+button {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Box Shadow */
+.hero {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Border Radius */
+.card {
+    border-radius: 15px;
+}</code></pre>
+            </div>
+
+            <h3>Висновки:</h3>
+            <p>В ході виконання лабораторної роботи №2 було:</p>
+            <ul>
+                <li>Створено зовнішній CSS файл та підключено до HTML</li>
+                <li>Застосовано різні типи селекторів: тегу, класу, ідентифікатора, атрибута, псевдокласів</li>
+                <li>Використано властивості для оформлення тексту, фону, контурів</li>
+                <li>Стилізовано таблиці та списки</li>
+                <li>Застосовано просунуті CSS техніки: flexbox, transitions, shadows</li>
+                <li>Створено резюме з повною CSS стилізацією</li>
+                <li>Реалізовано адаптивний дизайн</li>
+            </ul>
+        </section>
+
+        <section class="lab-section" id="lab3">
+            <h2>ЛАБОРАТОРНА РОБОТА №3</h2>
             <p><em>Буде додано після виконання</em></p>
         </section>
     </div>
