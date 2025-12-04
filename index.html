@@ -161,6 +161,7 @@
             <a href="#lab3">Лабораторна робота №3</a>
             <a href="#lab4">Лабораторна робота №4</a>
             <a href="#lab5">Лабораторна робота №5</a>
+            <a href="#lab5">Лабораторна робота №6</a>
         </nav>
 
         <section class="lab-section" id="lab1">
@@ -1416,6 +1417,267 @@ console.log(result); // 24</code></pre>
                 <li>Опрацьовано алгоритм перевірки дужок за допомогою стеку</li>
                 <li>Використано деструктуризацію та spread оператор</li>
                 <li>Вивчено різницю між функціями-конструкторами та класами ES6</li>
+            </ul>
+        </section>
+<section class="lab-section" id="lab6">
+            <h2>ЛАБОРАТОРНА РОБОТА №6</h2>
+            <h3>Тема: ПРОТОТИПИ. КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ</h3>
+
+            <h3>Мета роботи:</h3>
+            <p>Придбати практичні навички роботи з DOM, подіями та делегуванням подій. 
+            Навчитись створювати інтерактивні елементи інтерфейсу та обробляти користувацькі дії.</p>
+
+            <h3>Посилання на ресурси:</h3>
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Посилання</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Лабораторна робота №6 (всі завдання)</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/" target="_blank">Lab 6 Index</a></td>
+                    </tr>
+                    <tr>
+                        <td>Пункт 3 - Делегування подій (Modal)</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task3-modal.html" target="_blank">Task 3 Modal</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 2</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task2.html" target="_blank">Task 2</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 4</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task4.html" target="_blank">Task 4</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 6</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task6.html" target="_blank">Task 6</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 7</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task7.html" target="_blank">Task 7</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 8</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task8.html" target="_blank">Task 8</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 9</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task9.html" target="_blank">Task 9</a></td>
+                    </tr>
+                    <tr>
+                        <td>Завдання 10</td>
+                        <td><a href="https://freazg.github.io/IO-31_appWEB-SasYevhenii-FIOT-2025/lab6/task10.html" target="_blank">Task 10</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>ПУНКТ 3 - Делегування подій (Модальне вікно)</h3>
+            <p><strong>Умова:</strong> У власному WEB-застосунку створити програмний код делегування подій: 
+            при виборі елемента в колекції елементів повинне відкритись модальне вікно, яке містить опис цього елемента.</p>
+            
+            <div class="code-section">
+                <pre><code>// База даних товарів
+const productsData = {
+    '1': { icon: '💻', title: 'Ноутбук', price: '25000 грн', ... },
+    '2': { icon: '📱', title: 'Смартфон', price: '15000 грн', ... },
+    ...
+};
+
+// ДЕЛЕГУВАННЯ ПОДІЙ: один слухач на батьківському елементі
+productsGrid.addEventListener('click', function(event) {
+    // Шукаємо найближчу картку товару
+    const productCard = event.target.closest('.product-card');
+    
+    if (productCard) {
+        const productId = productCard.dataset.id;
+        openModal(productId);
+    }
+});
+
+function openModal(productId) {
+    const product = productsData[productId];
+    // Формуємо HTML для модального вікна
+    modalBody.innerHTML = `...`;
+    // Відкриваємо модальне вікно
+    modal.classList.add('active');
+}</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/wB4tDwxJ/image.png" alt="Пункт 3 - Modal" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №2 - SWAP ME</h3>
+            <p><strong>Умова:</strong> Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.</p>
+            
+            <div class="code-section">
+                <pre><code>const input1 = document.getElementById('input1');
+const input2 = document.getElementById('input2');
+const swapBtn = document.getElementById('swapBtn');
+
+swapBtn.addEventListener('click', function() {
+    // Обмін значень через тимчасову змінну
+    const temp = input1.value;
+    input1.value = input2.value;
+    input2.value = temp;
+    
+    console.log('Обмін виконано');
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/GhXyx3mY/image.png" alt="Завдання 2" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №4 - Зменшити/Збільшити</h3>
+            <p><strong>Умова:</strong> Кнопка "Зменшити" робить квадрат менше на 15 пікселів. 
+            Кнопка "Збільшити" робить квадрат більше на 15 пікселів.</p>
+            
+            <div class="code-section">
+                <pre><code>let currentSize = 150;
+
+function updateBoxSize() {
+    box.style.width = currentSize + 'px';
+    box.style.height = currentSize + 'px';
+}
+
+decreaseBtn.addEventListener('click', function() {
+    if (currentSize > 15) {
+        currentSize -= 15;
+        updateBoxSize();
+    }
+});
+
+increaseBtn.addEventListener('click', function() {
+    currentSize += 15;
+    updateBoxSize();
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/MpjpfzMS/image.png" alt="Завдання 4" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №6 - Подвоїти</h3>
+            <p><strong>Умова:</strong> Натиснувши кнопку "Подвоїти", збільшити значення у кожному елементі списку у 2 рази.</p>
+            
+            <div class="code-section">
+                <pre><code>doubleBtn.addEventListener('click', function() {
+    // Отримуємо всі елементи списку
+    const listItems = numberList.querySelectorAll('li');
+    
+    // Подвоюємо кожне значення
+    listItems.forEach((item) => {
+        const currentValue = parseInt(item.textContent);
+        const newValue = currentValue * 2;
+        item.textContent = newValue;
+    });
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/rF2kZ5Kc/image.png" alt="Завдання 6" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №7 - Categories</h3>
+            <p><strong>Умова:</strong> Порахувати кількість категорій в ul#categories. 
+            Для кожного елемента li.item вивести текст заголовку та кількість елементів в категорії.</p>
+            
+            <div class="code-section">
+                <pre><code>const categories = document.querySelectorAll('#categories .item');
+
+console.log(`Number of categories: ${categories.length}`);
+
+categories.forEach(category => {
+    const title = category.querySelector('h2').textContent;
+    const items = category.querySelectorAll('ul li');
+    
+    console.log(`Category: ${title}`);
+    console.log(`Elements: ${items.length}`);
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/FRzq1Hzj/image.png" alt="Завдання 7" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №8 - Login Form</h3>
+            <p><strong>Умова:</strong> Обробка відправлення форми за подією submit. 
+            Валідація полів, збір даних в об'єкт, очищення форми.</p>
+            
+            <div class="code-section">
+                <pre><code>loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = this.elements.email.value.trim();
+    const password = this.elements.password.value.trim();
+    
+    if (email === '' || password === '') {
+        alert('All form fields must be filled in');
+        return;
+    }
+    
+    const formData = { email, password };
+    console.log(formData);
+    
+    this.reset();
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/hvFHwq43/image.png" alt="Завдання 8" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №9 - Change Color</h3>
+            <p><strong>Умова:</strong> Скрипт змінює колір фону body по кліку на кнопку і задає значення кольору в span.</p>
+            
+            <div class="code-section">
+                <pre><code>function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, '0')}`;
+}
+
+changeColorBtn.addEventListener('click', function() {
+    const newColor = getRandomHexColor();
+    document.body.style.background = newColor;
+    colorSpan.textContent = newColor;
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/L4Y9bHD7/image.png" alt="Завдання 9" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>ЗАВДАННЯ №10 - Create/Destroy Boxes</h3>
+            <p><strong>Умова:</strong> Створення та очищення колекції div елементів. 
+            Перший 30x30px, кожен наступний більший на 10px, всі з випадковими кольорами.</p>
+            
+            <div class="code-section">
+                <pre><code>function createBoxes(amount) {
+    boxesContainer.innerHTML = '';
+    let size = 30;
+    
+    for (let i = 0; i < amount; i++) {
+        const box = document.createElement('div');
+        box.style.width = `${size}px`;
+        box.style.height = `${size}px`;
+        box.style.backgroundColor = getRandomHexColor();
+        boxesContainer.appendChild(box);
+        size += 10;
+    }
+}
+
+function destroyBoxes() {
+    boxesContainer.innerHTML = '';
+}
+
+createBtn.addEventListener('click', function() {
+    const amount = parseInt(input.value);
+    if (amount >= 1 && amount <= 100) {
+        createBoxes(amount);
+        input.value = '';
+    }
+});</code></pre>
+            </div>
+            <img src="https://i.postimg.cc/wB4tDwxJ/image.png" alt="Завдання 10" style="max-width: 100%; border: 1px solid #ddd;">
+
+            <h3>Висновки:</h3>
+            <p>В ході виконання лабораторної роботи №6 було:</p>
+            <ul>
+                <li>Освоєно роботу з DOM: пошук елементів, зміна вмісту та стилів</li>
+                <li>Вивчено обробку подій: click, submit, keydown</li>
+                <li>Реалізовано делегування подій для оптимізації коду</li>
+                <li>Використано методи querySelector, querySelectorAll для роботи з DOM</li>
+                <li>Застосовано event.preventDefault() для запобігання стандартної поведінки</li>
+                <li>Створено модальне вікно з делегуванням подій на батьківському елементі</li>
+                <li>Використано event.target.closest() для пошуку батьківського елемента</li>
+                <li>Реалізовано динамічне створення та видалення елементів DOM</li>
+                <li>Застосовано валідацію форм через JavaScript</li>
+                <li>Вивчено властивості elements форми для доступу до полів</li>
             </ul>
         </section>
     </div>
